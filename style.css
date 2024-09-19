@@ -1,0 +1,13 @@
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.chave{
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  font-size: 1.2em;
+}
