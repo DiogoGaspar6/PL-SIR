@@ -22,11 +22,56 @@ h1{
 }
 
 .chave{
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.895);
   box-shadow: 0.1em 0.1em 0.5em black;
+}
+
+.resultados{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.resultados > p > a {
+  color: black;
+  text-decoration: none;
+}
+
+.resultados > p > a:hover{
+  color: green;
+  text-decoration: underline;
+}
+
+.premios{
+  margin: 50px;
+  background-color: rgb(251, 251, 97);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0.1em 0.1em 0.5em black;
+  transition: all ease-in-out;
+  transition-duration: 300ms;
+}
+
+.premios:hover{
+  scale: 1.05;
+}
+
+.premios > p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.premios > h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
 .chave #numeroschave, .chave #estrelaschave {
@@ -73,7 +118,7 @@ footer{
   color: white;
 }
 
-a{
+footer > p > a{
   text-decoration: none;
   color:white
 }

@@ -22,8 +22,7 @@ function gerarNumeroChave() {
     }
     numeros.push(temp)
   }
-  var numerosText = numeros.join(", ")
-  return "Numeros: " + numerosText
+  return numeros
 }
 
 function gerarEstrelasChave() {
@@ -38,10 +37,7 @@ function gerarEstrelasChave() {
     }
     estrelas.push(temp)
   }
-
-  var estrelasText = estrelas.join(", ")
-
-  return "Estrelas: " + estrelasText
+  return estrelas
 }
 
 function gerarNovaChave() {
@@ -50,6 +46,31 @@ function gerarNovaChave() {
 function mostrarChave() {
   const numerochave = document.getElementById("numeroschave")
   const estrelasChave = document.getElementById("estrelaschave")
-  numerochave.innerText = gerarNumeroChave()
-  estrelasChave.innerText = gerarEstrelasChave()
+
+  const numeros = gerarNumeroChave()
+  const estrelas = gerarEstrelasChave()
+
+  numerochave.innerText = "Numeros: " + numeros.join(", ")
+  estrelasChave.innerText = "Estrelas: " + estrelas.join(", ")
+
+  const chave = {
+    numeros: numeros,
+    estrelas: estrelas
+  }
+
+  const chaveJSON = JSON.stringify(chave)
+  console.log(chaveJSON)
+
+  fetch('http://localhost:3000/save', {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    body:{
+      body: chaveJSON
+    }
+  })
+  .then(response => response.text())
+  .then(data => console.log(data))
+  .catch(error => console.error('[ERROR]' + error))
 }
