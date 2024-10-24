@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+app.use(express.static('public'))
+
+
 const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
 }
