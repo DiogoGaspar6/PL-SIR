@@ -7,10 +7,9 @@ window.addEventListener('load', function() {
 function updateHtml() {
     let numbers = document.getElementById("numeroschave");
     let stars = document.getElementById("estrelaschave");
-
     getEuromilhoesKey().then(json => {
-        numbers.innerHTML = json.key.numbers;
-        stars.innerHTML = json.key.stars;
+        numbers.innerHTML = json.chave.numeros;
+        stars.innerHTML = json.chave.estrelas;
     });
 }
 

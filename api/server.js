@@ -7,33 +7,33 @@ const generateRandomNumber = (min, max) => {
 }
 
 const generateEuromilhoesKey = (req, res) => {
-    let numeros = [];
-    let estrelas = [];
+    let numbers = [];
+    let stars = [];
 
     for (let i = 0; i < 5; i++) {
-        let numero = generateRandomNumber(1, 51);
+        let number = generateRandomNumber(1, 51);
 
-        while (numeros.includes(numero)) {
-            numero = generateRandomNumber(1, 51);
+        while (numbers.includes(number)) {
+            number = generateRandomNumber(1, 51);
         }
 
-        numeros.push(numero);
+        numbers.push(number);
     }
 
     for (let i = 0; i < 2; i++) {
-        let numero = generateRandomNumber(1, 13);
+        let number = generateRandomNumber(1, 13);
 
-        while (estrelas.includes(numero)) {
-            numero = generateRandomNumber(1, 13);
+        while (stars.includes(number)) {
+            number = generateRandomNumber(1, 13);
         }
 
-        estrelas.push(numero);
+        stars.push(number);
     }
 
     return res.status(200).json({
         "chave": {
-            "numeros": numeros,
-            "estrelas": estrelas
+            "numeros": numbers,
+            "estrelas": stars
         }
     });
 }
