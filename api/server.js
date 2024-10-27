@@ -1,9 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const PORT = process.env.PORT || 3004;
 
 app.use(express.static(__dirname))
-
+app.use(cors());
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + 'index.html');
+})
 
 const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -40,11 +44,7 @@ const generateEuromilhoesKey = (req, res) => {
         }
     });
 }
-
-app.use(cors());
 app.get('/generate-key', generateEuromilhoesKey);
-
-const PORT = process.env.PORT || 3004;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
