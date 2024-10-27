@@ -4,7 +4,12 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3004;
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://pl-sir-32ou.onrender.com', // Replace with your frontend's URL
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, '../')))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
