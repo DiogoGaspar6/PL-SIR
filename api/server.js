@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3004;
 app.use(express.static(__dirname))
 app.use(cors());
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html');
+    res.sendFile(__dirname + '../index.html');
 })
 
 const generateRandomNumber = (min, max) => {
