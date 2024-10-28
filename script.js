@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:3004/"
+const apiURL = "/"
 
 window.addEventListener('load', function() {
     updateHtml();
